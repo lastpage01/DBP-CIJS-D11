@@ -26,9 +26,9 @@ class ColorQuiz{
         divContainer.insertAdjacentElement("beforeend",divBox);
     }
     paintTime(){
-        let classTime = new Time();
+        
         let divTime = document.getElementById("time")
-        divTime.insertAdjacentElement("beforeend",classTime.html());
+        divTime.insertAdjacentElement("beforeend",this.classTime.html());
     }
     paintBox(){
         
