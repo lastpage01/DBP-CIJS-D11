@@ -1,15 +1,13 @@
 import {Time} from "./modules/Timer.js"
 import {RowBox} from "./modules/RowBox.js"
-// let color;
-// let color_light;
 class ColorQuiz{
     color;
     color_light;
-    listRowBox = []
-    listItem
-    numberRowBox = 3
-    numberBoxItem = 3
+    listItem;
+    numberRowBox = 3;
+    numberBoxItem = 3;
     classTime = new Time();
+    ////////////////////////////////////////////////////
     paintBody(){
         let body = document.querySelector('body');
         let divContainer = document.createElement("div");
@@ -31,20 +29,22 @@ class ColorQuiz{
         divTime.insertAdjacentElement("beforeend",this.classTime.html());
     }
     paintBox(){
-        
+        let listRowBox = []
         let divBox = document.getElementById("box")
         for(let i = 0; i < this.numberRowBox ; i++ ) {
-            this.listRowBox.push(new RowBox(this.numberBoxItem));
+            listRowBox.push(new RowBox(this.numberBoxItem));
         }
-        for(let lb of this.listRowBox){
+        for(let lb of listRowBox){
             divBox.insertAdjacentElement("beforeend",lb.html());
         }
     }
+
+    ///////////////////////////////////////////////////////////
     getListItem(){
         this.listItem = document.querySelectorAll(".item");
     }
     evenItem(){
-        for(let i = 0; i<= this.listItem.length;i++){
+        for(let i = 0; i< this.listItem.length;i++){
             this.listItem[i].addEventListener("click",(e)=>{
                 this.startgame(e);
             });
